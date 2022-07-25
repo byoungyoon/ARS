@@ -1,7 +1,8 @@
 import React from "react";
+import Template from "./pages/Template";
 
 function App() {
-  return <div>testtest</div>;
+  return <Template />;
 }
 
 export default App;

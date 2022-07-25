@@ -19,6 +19,7 @@ module.exports = {
   },
   devServer: {
     liveReload: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
