@@ -1,11 +1,14 @@
 const express = require("express");
 const app = express();
-const path = require("path");
+const db = require("./app/models");
 
-app.use(express.static(path.resolve(__dirname, "./dist")));
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./dist/index.html"));
-});
+app.use(express.json()).use(express.urlencoded({ extended: true }));
+
+db.sequelize.sync();
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db");
+// });
+require("./app/routes/algorithms.route")(app);
 
 const PORT = process.env.PORT || "8080";
 app.listen(PORT, () => {
