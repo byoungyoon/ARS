@@ -20,6 +20,7 @@ module.exports = {
   devServer: {
     liveReload: true,
     historyApiFallback: true,
+    port: 9090,
   },
   module: {
     rules: [
