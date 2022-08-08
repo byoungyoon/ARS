@@ -15,7 +15,7 @@ const Template = () => {
         </div>
       </div>
       <div className="line">
-        <div className="inner container">
+        <div className="inner main">
           <Routes>
             <Route path="*" element={<Page404 />}></Route>
             <Route path="/" element={<Home />}></Route>

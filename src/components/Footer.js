@@ -35,7 +35,7 @@ const Arrow = styled.div`
   right: 0;
 
   background: #fff url("arrow-up2.svg") no-repeat 50% 50%;
-  border: 1px solid #eee;
+  border: 1px solid #d5d5d5;
   border-radius: 50%;
 
   padding: 5px;
