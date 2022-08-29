@@ -1,8 +1,15 @@
+@font-face{
+  font-family: 'song';
+  src: url("../public/font/SongMyung-Regular.ttf") format('truetype');
+}
+
 body {
   margin: 0;
   font-weight: 400;
   font-size: 17px;
   line-height: 2;
+
+  font-family: 'song';
 
   background-color: #f3f3f3;
 }

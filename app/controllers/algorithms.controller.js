@@ -1,20 +1,19 @@
 const db = require("../models");
-const Algorithms = db.algorithms;
+const Algorithm = db.algorithm;
+const Tag = db.tag;
 const Op = db.Sequelize.Op;
-const { v4 } = require("uuid");
 
 exports.create = (req, res) => {
   if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
   }
 
-  const algorithms = {
-    id: v4(),
+  const algorithm = {
     title: req.body.title,
     scope: req.body.scope,
   };
 
-  Algorithms.create(algorithms)
+  Algorithm.create(algorithm)
     .then((data) => {
       res.send(data);
     })
@@ -27,7 +26,31 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-  Algorithms.findAll()
+  const limit = 12;
+  const pagination = {
+    limit: limit * req.query.page,
+    offset: 0,
+  };
+
+  const cd = Number(req.query.cd);
+
+  Algorithm.findAll({
+    include: [
+      {
+        model: Tag,
+        through: { attributes: [] },
+        attributes: ["cd", "cd_nm"],
+        where: cd !== 0 && {
+          cd: cd,
+        },
+      },
+    ],
+    order: [
+      ["updatedAt", "DESC"],
+      [Tag, "cd_nm", "DESC"],
+    ],
+    ...pagination,
+  })
     .then((data) => {
       res.send(data);
     })
@@ -41,7 +64,7 @@ exports.findAll = (req, res) => {
 
 exports.findOne = (req, res) => {
   const id = req.params.id;
-  Algorithms.findOne({ where: { id: id } })
+  Algorithm.findOne({ where: { id: id } })
     .then((data) => {
       if (!data)
         res.status(400).send({ message: "Not found algorithms with id " + id });
@@ -62,7 +85,7 @@ exports.update = (req, res) => {
   }
 
   const id = req.params.id;
-  Algorithms.update(req.body, { where: { id: id }, useFindAndModify: false })
+  Algorithm.update(req.body, { where: { id: id }, useFindAndModify: false })
     .then((data) => {
       if (!data) {
         res.status(400).send({
@@ -79,7 +102,7 @@ exports.update = (req, res) => {
 
 exports.delete = (req, res) => {
   const id = req.params.id;
-  Algorithms.destroy({ where: { id: id } })
+  Algorithm.destroy({ where: { id: id } })
     .then((data) => {
       if (!data) {
         res.send(400).send({

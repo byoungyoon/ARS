@@ -4,8 +4,8 @@ class AlgorithmsService {
   create(data) {
     return http.post("/algorithms", data);
   }
-  findAll() {
-    return http.get("/algorithms");
+  findAll(page, cd) {
+    return http.get(`/algorithms?page=${page}&cd=${cd}`);
   }
   findOne(id) {
     return http.get(`/algorithms/${id}`);

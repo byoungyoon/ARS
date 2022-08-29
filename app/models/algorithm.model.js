@@ -1,7 +1,8 @@
 module.exports = (sequelize, Sequelize) => {
-  const Algorithms = sequelize.define("algorithms", {
-    id: {
-      type: Sequelize.STRING,
+  const Algorithm = sequelize.define("algorithms", {
+    cd: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
     },
     title: {
@@ -24,5 +25,5 @@ module.exports = (sequelize, Sequelize) => {
     },
   });
 
-  return Algorithms;
+  return Algorithm;
 };

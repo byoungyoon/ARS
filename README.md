@@ -8,4 +8,6 @@
 > > 4일차 : https://blog.naver.com/bur5698/222831675195  
 > > 5일차 : https://blog.naver.com/bur5698/222833188380  
 > > 6일차 : https://blog.naver.com/bur5698/222837866218  
-> > 7일차 : https://blog.naver.com/bur5698/222843224770
+> > 7일차 : https://blog.naver.com/bur5698/222843224770  
+> > 8일차 : https://blog.naver.com/bur5698/222855144427  
+> > 9일차 : https://blog.naver.com/bur5698/222861162533
