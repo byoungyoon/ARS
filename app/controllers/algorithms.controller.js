@@ -3,6 +3,62 @@ const Algorithm = db.algorithm;
 const Tag = db.tag;
 const Op = db.Sequelize.Op;
 
+exports.findAll = async (req, res) => {
+  const limit = 12;
+  const options = {
+    limit: limit * req.query.page,
+    offset: 0,
+    order: [
+      ["updatedAt", "DESC"],
+      [Tag, "cd_nm", "DESC"],
+    ],
+    distinct: true,
+  };
+
+  // 누른 필터 (단, 0 = 전체)
+  const cd = Number(req.query.select);
+
+  const tasks = await Algorithm.findAll({
+    include: [
+      {
+        model: Tag,
+        where: cd !== 0 && {
+          cd: cd,
+        },
+      },
+    ],
+    attributes: ["cd"],
+  });
+
+  let arr = [];
+  tasks.map((data) => {
+    arr.push({ cd: data.dataValues.cd });
+  });
+
+  Algorithm.findAndCountAll({
+    include: [
+      {
+        model: Tag,
+        through: { attributes: [] },
+        attributes: ["cd", "cd_nm"],
+      },
+    ],
+    where: {
+      [Op.or]: arr,
+    },
+    ...options,
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving algorithms",
+      });
+    });
+};
+
 exports.create = (req, res) => {
   if (!req.body.title) {
     res.status(400).send({ message: "Content can not be empty!" });
@@ -23,43 +79,6 @@ exports.create = (req, res) => {
           err.message || "Some error occurred while creating the algorithms",
       })
     );
-};
-
-exports.findAll = (req, res) => {
-  const limit = 12;
-  const pagination = {
-    limit: limit * req.query.page,
-    offset: 0,
-  };
-
-  const cd = Number(req.query.cd);
-
-  Algorithm.findAll({
-    include: [
-      {
-        model: Tag,
-        through: { attributes: [] },
-        attributes: ["cd", "cd_nm"],
-        where: cd !== 0 && {
-          cd: cd,
-        },
-      },
-    ],
-    order: [
-      ["updatedAt", "DESC"],
-      [Tag, "cd_nm", "DESC"],
-    ],
-    ...pagination,
-  })
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving algorithms",
-      });
-    });
 };
 
 exports.findOne = (req, res) => {
