@@ -2,6 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Tag from "./Tag";
 
+/**
+ *
+ * @param {string} title card의 제목
+ * @param {number} scope card의 평점
+ * @param {object} tags 해당 card의 태그들
+ * @returns
+ */
 const Card = (props) => {
   const { title, scope, tags, ...prop } = props;
 

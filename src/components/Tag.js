@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
+/**
+ *
+ * @param {string} name 태그 이름
+ * @returns
+ */
 const Tag = (props) => {
   const { name, ...prop } = props;
 
