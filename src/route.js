@@ -8,10 +8,14 @@ export const element = [
     element: <Home />,
   },
   {
-    path: "home",
-    element: <Home />,
+    path: "/home",
     children: [
       {
+        index: true,
+        element: <Home />,
+      },
+      {
+        index: false,
         path: ":cd",
         element: <Detail />,
       },

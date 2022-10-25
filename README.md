@@ -1,13 +1,26 @@
-## ARS
+# ARS
 
-> project log
->
-> > 1일차 : https://blog.naver.com/bur5698/222821274737  
-> > 2일차 : https://blog.naver.com/bur5698/222822997286  
-> > 3일차 : https://blog.naver.com/bur5698/222828619235  
-> > 4일차 : https://blog.naver.com/bur5698/222831675195  
-> > 5일차 : https://blog.naver.com/bur5698/222833188380  
-> > 6일차 : https://blog.naver.com/bur5698/222837866218  
-> > 7일차 : https://blog.naver.com/bur5698/222843224770  
-> > 8일차 : https://blog.naver.com/bur5698/222855144427  
-> > 9일차 : https://blog.naver.com/bur5698/222861162533
+## log
+
+project log
+
+- 1일차 : https://blog.naver.com/bur5698/222821274737
+- 2일차 : https://blog.naver.com/bur5698/222822997286
+- 3일차 : https://blog.naver.com/bur5698/222828619235
+- 4일차 : https://blog.naver.com/bur5698/222831675195
+- 5일차 : https://blog.naver.com/bur5698/222833188380
+- 6일차 : https://blog.naver.com/bur5698/222837866218
+- 7일차 : https://blog.naver.com/bur5698/222843224770
+- 8일차 : https://blog.naver.com/bur5698/222855144427
+- 9일차 : https://blog.naver.com/bur5698/222861162533
+
+error log
+
+- router로 경로 이동 시 webpack 관련 오류
+
+```
+its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+```
+
+> webpack에서 historyfallback시 기준이 되는 경로가 없을 경우 발생하는 오류  
+> 해결법 : webpack output 설정에 publicPath 입력

@@ -13,14 +13,15 @@ module.exports = {
   output: {
     path: path.resolve("./dist"),
     filename: "[name].min.js",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".jsx"],
   },
   devServer: {
     liveReload: true,
-    historyApiFallback: true,
     port: 9090,
+    historyApiFallback: true,
   },
   module: {
     rules: [
