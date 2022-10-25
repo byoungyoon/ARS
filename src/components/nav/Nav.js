@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Nav = () => {
+export const Nav = () => {
   return (
     <Container>
       <ul>
         <li>
-          <Link to="/">홈</Link>
+          <Link to="/home">홈</Link>
         </li>
         <li>
           <Link to="/guest">방명록</Link>
@@ -16,8 +16,6 @@ const Nav = () => {
     </Container>
   );
 };
-
-export default Nav;
 
 const Container = styled.nav`
   height: 66px;

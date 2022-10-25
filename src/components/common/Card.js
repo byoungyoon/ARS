@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Tag from "./Tag";
+import { Tag } from "../../components";
 
 /**
  *
@@ -9,8 +10,8 @@ import Tag from "./Tag";
  * @param {object} tags 해당 card의 태그들
  * @returns
  */
-const Card = (props) => {
-  const { title, scope, tags, ...prop } = props;
+export const Card = (props) => {
+  const { cd, title, scope, tags, ...prop } = props;
 
   const isScope = (num, filled) => {
     return [...Array(num)].map((value, index) =>
@@ -27,20 +28,20 @@ const Card = (props) => {
   };
 
   return (
-    <Container>
-      <div className="content" {...prop}>
-        <div>{title}</div>
-        <div className="scope">
-          {isScope(scope, true)}
-          {isScope(5 - scope, false)}
+    <Link to={`/home/${cd}`}>
+      <Container>
+        <div className="content" {...prop}>
+          <div>{title}</div>
+          <div className="scope">
+            {isScope(scope, true)}
+            {isScope(5 - scope, false)}
+          </div>
         </div>
-      </div>
-      <div className="tag">{isTag()}</div>
-    </Container>
+        <div className="tag">{isTag()}</div>
+      </Container>
+    </Link>
   );
 };
-
-export default Card;
 
 const Star = styled.p`
   margin: 0;
@@ -67,6 +68,10 @@ const Container = styled.div`
 
   &:hover {
     transform: translateY(-3px);
+  }
+
+  & > * {
+    color: #333;
   }
 
   & > .content {

@@ -1,7 +1,5 @@
 import React from "react";
 
-const Guest = () => {
+export const Guest = () => {
   return <div>Guest</div>;
 };
-
-export default Guest;

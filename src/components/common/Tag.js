@@ -6,7 +6,7 @@ import styled from "styled-components";
  * @param {string} name 태그 이름
  * @returns
  */
-const Tag = (props) => {
+export const Tag = (props) => {
   const { name, ...prop } = props;
 
   return (
@@ -15,8 +15,6 @@ const Tag = (props) => {
     </div>
   );
 };
-
-export default Tag;
 
 const Item = styled.span`
   font-size: 0.9em;

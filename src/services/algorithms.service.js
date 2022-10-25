@@ -24,4 +24,4 @@ class AlgorithmsService {
   }
 }
 
-export default new AlgorithmsService();
+export const algorithmsService = new AlgorithmsService();

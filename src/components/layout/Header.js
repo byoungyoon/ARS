@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Nav from "./Nav";
+import { Nav } from "../../components";
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <Title>
@@ -13,8 +13,6 @@ const Header = () => {
     </>
   );
 };
-
-export default Header;
 
 const Title = styled.div`
   padding: 23px 0;

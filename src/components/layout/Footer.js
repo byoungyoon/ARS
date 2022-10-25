@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Footer = () => {
+export const Footer = () => {
   const handleScroll = () => {
     scrollTo({
       top: 0,
@@ -17,8 +17,6 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;
 
 const Text = styled.p`
   margin-bottom: 10px;

@@ -1,11 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import Card from "../components/Card";
-import Tag from "../components/Tag";
-import algorithmsService from "../services/algorithms.service";
-import tagService from "../services/tag.service";
+import { Card, Tag } from "../../components";
+import { algorithmsService, tagService } from "../../services";
 
-const Home = () => {
+export const Home = () => {
   const [page, setPage] = useState(1);
   const [items, setItems] = useState({
     count: 0,
@@ -63,7 +61,12 @@ const Home = () => {
       items.rows.length !== 0 &&
       items.rows.map((value, index) => (
         <Item last={index % 3 === 2} key={value.cd}>
-          <Card title={value.title} scope={value.scope} tags={value.tags} />
+          <Card
+            cd={value.cd}
+            title={value.title}
+            scope={value.scope}
+            tags={value.tags}
+          />
         </Item>
       ))
     );
@@ -90,8 +93,6 @@ const Home = () => {
     </>
   );
 };
-
-export default Home;
 
 const Filter = styled.div`
   margin-bottom: 12px;
