@@ -24,3 +24,12 @@ its MIME type ('text/html') is not executable, and strict MIME type checking is 
 
 > webpack에서 historyfallback시 기준이 되는 경로가 없을 경우 발생하는 오류  
 > 해결법 : webpack output 설정에 publicPath 입력
+
+- label 사용시 for 관련 오류
+
+```
+Invalid DOM property `for`. Did you mean `htmlFor`?
+```
+
+> JSX에서 html을 사용할 경우 본질은 JavaScript 이기 때문에 for을 직접적으로 사용하면 발생하는 오류
+> 해결법 : for을 htmlFor로 변경한다.

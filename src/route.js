@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Home, Detail, Guest, Page404 } from "./pages";
+import { Home, Detail, Guest, Page404, Create } from "./pages";
 
 export const element = [
   {
@@ -18,6 +18,11 @@ export const element = [
         index: false,
         path: ":cd",
         element: <Detail />,
+      },
+      {
+        index: false,
+        path: "create",
+        element: <Create />,
       },
     ],
   },

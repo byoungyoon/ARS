@@ -1,6 +1,6 @@
 @font-face{
-  font-family: 'song';
-  src: url("../public/font/SongMyung-Regular.ttf") format('truetype');
+  font-family: 'SemplicitaPro';
+  src: url(https://assets.codepen.io/4291733/SemplicitaPro-Medium.woff2);
 }
 
 body {
@@ -9,7 +9,7 @@ body {
   font-size: 17px;
   line-height: 2;
 
-  font-family: 'song';
+  font-family: 'SemplicitaPro';
 
   background-color: #f3f3f3;
 }

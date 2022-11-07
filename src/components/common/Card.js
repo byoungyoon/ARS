@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Tag } from "../../components";
+import { StarFilled, StarLined } from "../../constant";
 
 /**
  *
@@ -16,9 +17,13 @@ export const Card = (props) => {
   const isScope = (num, filled) => {
     return [...Array(num)].map((value, index) =>
       filled ? (
-        <Star key={"filled" + index} />
+        <Star key={"filled" + index}>
+          <StarFilled />
+        </Star>
       ) : (
-        <StarLine key={"lined" + index} />
+        <StarLine key={"lined" + index}>
+          <StarLined />
+        </StarLine>
       )
     );
   };
@@ -47,14 +52,12 @@ const Star = styled.p`
   margin: 0;
   width: 20px;
   height: 20px;
-  background: url("./svg/iconmonstr-star-filled.svg") no-repeat center center;
 `;
 
 const StarLine = styled.p`
   margin: 0;
   width: 20px;
   height: 20px;
-  background: url("./svg/iconmonstr-star-lined.svg") no-repeat center center;
 `;
 
 const Container = styled.div`
