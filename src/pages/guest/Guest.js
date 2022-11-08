@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Guest = () => {
-  return <div>Guest</div>;
+  return <div className="title">방명록 목록</div>;
 };

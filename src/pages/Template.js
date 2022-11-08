@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Header, Footer } from "../components";
 import { element } from "../route";
 import { useRoutes } from "react-router-dom";
+import styled from "styled-components";
+import { COLOR, SPACING } from "../constant";
 
 export const Template = () => {
   const routes = useRoutes(element);
 
   return (
     <>
-      <div className="line">
-        <div className="inner">
+      <Line>
+        <Inner>
           <Header />
-        </div>
-      </div>
-      <div className="line">
-        <div className="inner main">{routes}</div>
-      </div>
-      <div className="inner">
+        </Inner>
+      </Line>
+      <Line>
+        <Main>{routes}</Main>
+      </Line>
+      <Inner>
         <Footer />
-      </div>
+      </Inner>
     </>
   );
 };
+
+const Line = styled.div`
+  border-bottom: 1px solid ${COLOR.BLACK_LOW};
+`;
+
+const Inner = styled.div`
+  width: 1080px;
+  position: relative;
+  margin: 0 auto;
+`;
+
+const Main = styled(Inner)`
+  min-height: 600px;
+  padding: ${SPACING.S};
+`;

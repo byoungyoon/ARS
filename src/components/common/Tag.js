@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { COLOR, FONT, SPACING } from "../../constant";
 
 /**
  *
@@ -17,10 +18,10 @@ export const Tag = (props) => {
 };
 
 const Item = styled.span`
-  font-size: 0.9em;
-  padding: 7px;
+  font-size: ${FONT.S};
+  padding: ${SPACING.S};
   border-radius: 20%;
-  border: 2px solid #d5d5d5;
-  color: #aaaaaa;
-  margin-top: 5px;
+  border: 2px solid ${COLOR.GREY_HIGH};
+  backgroun-color: ${COLOR.GREY_BASE};
+  color: ${COLOR.BLACK_BASE};
 `;

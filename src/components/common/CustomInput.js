@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { COLOR, FONT, SPACING } from "../../constant";
+import { COLOR, FONT, SIZE, SPACING } from "../../constant";
 import gsap from "gsap";
 
 /**
@@ -9,13 +9,12 @@ import gsap from "gsap";
  * @param {JSX} children 아이콘 jSX
  * @returns
  */
-export const Input = (props) => {
+export const CustomInput = (props) => {
   const { label, children, ...prop } = props;
 
   const handler = (e) => {
     const data = {
       event: e.type,
-      target: e.currentTarget,
       input: e.currentTarget.parentElement.querySelector("input"),
       value: e.currentTarget.value,
       icon: e.currentTarget.parentElement.querySelector("i"),
@@ -79,7 +78,7 @@ const Field = styled.div`
   position: relative;
   display: flex;
   align-items: center;
-  height: 48px;
+  height: ${SIZE.M};
 
   & label,
   i {

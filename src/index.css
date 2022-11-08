@@ -18,17 +18,7 @@ a {
   text-decoration: none;
 }
 
-.line {
-  border-bottom: 1px solid #d5d5d5;
-}
-
-.inner {
-  width: 1080px;
-  position: relative;
-  margin: 0 auto;
-}
-
-.main {
-  min-height: 600px;
-  padding: 8px;
+.title {
+  font-weight: 550;
+  margin-bottom: 12px;
 }

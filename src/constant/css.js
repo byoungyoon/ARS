@@ -6,6 +6,9 @@ export const COLOR = {
   PINK_LOW: "#ffa6f7",
   PINK_DARK: "#892276",
   PINK_SHADOW: "#ffe1f7",
+  BLACK_LOW: "#d5d5d5",
+  BLACK_BASE: "#aaaaaa",
+  BLACK_HIGH: "#333333",
 };
 
 export const SPACING = {
@@ -18,4 +21,8 @@ export const SPACING = {
 export const FONT = {
   M: "16px",
   S: "14px",
+};
+
+export const SIZE = {
+  M: "48px",
 };
