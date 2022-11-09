@@ -36,6 +36,6 @@ const Inner = styled.div`
 `;
 
 const Main = styled(Inner)`
-  min-height: 600px;
+  min-height: 700px;
   padding: ${SPACING.S};
 `;

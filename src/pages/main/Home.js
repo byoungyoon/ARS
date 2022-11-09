@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Card, Tag } from "../../components";
+import { SPACING } from "../../constant";
 import { algorithmsService, tagService } from "../../services";
 
 export const Home = () => {
@@ -59,15 +60,15 @@ export const Home = () => {
   const isItems = () => {
     return (
       items.rows.length !== 0 &&
-      items.rows.map((value, index) => (
-        <Item last={index % 3 === 2} key={value.cd}>
+      items.rows.map((value) => (
+        <div key={value.cd}>
           <Card
             cd={value.cd}
             title={value.title}
             scope={value.scope}
             tags={value.tags}
           />
-        </Item>
+        </div>
       ))
     );
   };
@@ -86,39 +87,31 @@ export const Home = () => {
       <Filter>
         <div className="tags">{isTags()}</div>
       </Filter>
-      <Container>
-        {isItems()}
-        {isPagination()}
-      </Container>
+      <Container>{isItems()}</Container>
+      {isPagination()}
     </>
   );
 };
 
 const Filter = styled.div`
-  margin-bottom: 12px;
-
   & > .tags {
     display: flex;
     flex-wrap: wrap;
 
     & > * {
-      margin-right: 5px;
-      margin-bottom: 5px;
+      margin-right: ${SPACING.S};
       cursor: pointer;
     }
   }
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: ${SPACING.L};
 
-const Item = styled.div`
-  width: calc(100% / 3 - 14px);
-  margin-bottom: 20px;
-  margin-right: ${(props) => (props.last ? "0px" : "20px")};
+  margin-top: ${SPACING.L};
+  margin-bottom: ${SPACING.L};
 `;
 
 const Pagination = styled.div`
