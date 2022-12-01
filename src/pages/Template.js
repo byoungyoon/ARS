@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Header, Footer } from "../components";
 import { element } from "../route";
 import { useRoutes } from "react-router-dom";
@@ -37,5 +37,7 @@ const Inner = styled.div`
 
 const Main = styled(Inner)`
   min-height: 700px;
+  display: grid;
+  grid-template-rows: 50px auto;
   padding: ${SPACING.S};
 `;

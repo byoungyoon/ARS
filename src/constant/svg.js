@@ -1,5 +1,26 @@
 import React from "react";
 
+export const VerticalLineTwo = () => {
+  return (
+    <svg
+      clipRule="evenodd"
+      fillRule="evenodd"
+      strokeLinejoin="round"
+      strokeMiterlimit="2"
+      preserveAspectRatio="none"
+      width="100%"
+      height="40px"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="m14.75 3c-.414 0-.75.336-.75.75v16.5c0 .414.336.75.75.75s.75-.336.75-.75v-16.5c0-.414-.336-.75-.75-.75zm-4 0c-.414 0-.75.336-.75.75v16.5c0 .414.336.75.75.75s.75-.336.75-.75v-16.5c0-.414-.336-.75-.75-.75z"
+        fillRule="nonzero"
+      />
+    </svg>
+  );
+};
+
 export const Search = () => {
   return (
     <svg

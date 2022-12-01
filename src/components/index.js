@@ -4,6 +4,7 @@ export * from "./common/Code";
 export * from "./common/CustomEditor";
 export * from "./common/CustomInput";
 export * from "./common/CustomButton";
+export * from "./common/CustomContainer";
 export * from "./layout/Footer";
 export * from "./layout/Header";
 export * from "./nav/Nav";

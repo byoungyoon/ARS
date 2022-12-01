@@ -84,11 +84,13 @@ export const Home = () => {
   return (
     <>
       <div className="title">알고리즘 목록</div>
-      <Filter>
-        <div className="tags">{isTags()}</div>
-      </Filter>
-      <Container>{isItems()}</Container>
-      {isPagination()}
+      <div>
+        <Filter>
+          <div className="tags">{isTags()}</div>
+        </Filter>
+        <Container>{isItems()}</Container>
+        {isPagination()}
+      </div>
     </>
   );
 };
